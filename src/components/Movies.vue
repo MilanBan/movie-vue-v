@@ -24,16 +24,19 @@
 </template>
 
 <script>
-import movieService from '../services/movieService'
+
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  name: 'Movies',
-  data() {
-    return {
-      movies: [],
-    }
+
+  computed: {
+    ...mapGetters(['movies'])
   },
-  async created() {
-    this.movies = await movieService.getAll()
+  methods: {
+    ...mapActions(['getAllMovies'])
   },
+
+  beforeRouteEnter (to, from, next) {
+    next(vm => vm.getAllMovies())
+  }
 }
 </script>
