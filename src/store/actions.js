@@ -4,5 +4,8 @@ export default {
     async getAllMovies({ commit }){
         const movies = await movieService.getAll()
         commit('setMovies', movies)
-    }
+    },
+    setSearchLetters({ commit }, searchLetters){
+        commit('serSearchLetters', searchLetters)
+    },
 }

@@ -1,15 +1,27 @@
 <template>
-  <div>
-<h4>Add Movie</h4>
-    <form @submit.prevent="onSubmit">
+ <div>
+  <form @submit.prevent="onSubmit">
+    <div class="form-group">
       <input v-model="title" type="text" name="title" placeholder="title" class="form-control">
+    </div>
+    <div class="form-group">
       <input v-model="director"  type="text" name="director" placeholder="director" class="form-control">
+    </div>
+    <div class="form-group">
       <input v-model="imageUrl"  type="url" name="imageUrl" placeholder="imageUrl" class="form-control">
+    </div>
+    <div class="form-group">
       <input v-model="duration"  type="number" name="duration" placeholder="duration" class="form-control">
+    </div>
+    <div class="form-group">
       <input v-model="releaseDate"  type="date" name="releaseDate" placeholder="releaseDate" class="form-control">
+    </div>
+    <div class="form-group">
       <input v-model="genre"  type="text" name="genre" placeholder="genre" class="form-control">
+    </div>  
       <button type="submit" class="btn btn-success">Submit</button>
-    </form>  </div>
+  </form>
+ </div>
 </template>
 
 <script>
